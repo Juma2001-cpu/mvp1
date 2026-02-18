@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Room - Off-Campus Room Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #74ebd5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 400px;
+            text-align: center;
+        }
+        h2 { color: #0072ff; margin-bottom: 25px; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0072ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover { background: #005bb5; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Book Room</h2>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="text" placeholder="Room Name/ID" required>
+            <input type="date" placeholder="Start Date" required>
+            <input type="date" placeholder="End Date" required>
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+</body>
+</html>
