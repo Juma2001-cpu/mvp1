@@ -2,32 +2,51 @@
 <html>
 <head>
     <title>Register - Off-Campus Room Finder</title>
+
+    <!-- IMPORTANT: Makes it responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #74ebd5;
+            background: linear-gradient(to right, #74ebd5, #9face6);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 20px;
         }
+
         .container {
             background: white;
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            width: 350px;
+            width: 100%;
+            max-width: 400px;
             text-align: center;
         }
-        h2 { color: #0072ff; margin-bottom: 25px; }
+
+        h2 {
+            color: #0072ff;
+            margin-bottom: 25px;
+        }
+
         input {
             width: 100%;
             padding: 12px;
             margin: 10px 0;
             border-radius: 8px;
             border: 1px solid #ccc;
+            font-size: 16px;
         }
+
+        input:focus {
+            outline: none;
+            border-color: #0072ff;
+        }
+
         button {
             width: 100%;
             padding: 12px;
@@ -37,10 +56,34 @@
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 16px;
         }
-        button:hover { background: #005bb5; }
-        .link { margin-top: 15px; }
-        .link a { text-decoration: none; color: #0072ff; }
+
+        button:hover {
+            background: #005bb5;
+        }
+
+        .link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .link a {
+            text-decoration: none;
+            color: #0072ff;
+            font-weight: bold;
+        }
+
+        /* 📱 Extra small screens */
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
     </style>
 </head>
 <body>

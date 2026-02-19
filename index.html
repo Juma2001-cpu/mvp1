@@ -3,7 +3,6 @@
 <head>
     <title>Off-Campus Room Finder</title>
 
-    <!-- ✅ Important for Mobile Responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -37,7 +36,6 @@
         .header p {
             font-size: 18px;
             margin-bottom: 25px;
-            text-shadow: 1px 1px 6px rgba(0,0,0,0.15);
         }
 
         .btn {
@@ -58,7 +56,7 @@
             transform: scale(1.05);
         }
 
-        /* ROOMS GRID */
+        /* ROOMS */
         .rooms {
             max-width: 1200px;
             margin: 40px auto;
@@ -114,49 +112,68 @@
             background: #005bb5;
         }
 
-        /* MOBILE IMPROVEMENTS */
+        /* FOOTER */
+        .footer {
+            background: #002b5b;
+            color: white;
+            padding-top: 40px;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px 40px;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 15px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 15px;
+            background: #001f3f;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
         @media (max-width: 768px) {
-
-            .header {
-                padding: 40px 15px 20px;
-            }
-
-            .header h1 {
-                font-size: 30px;
-            }
-
-            .header p {
-                font-size: 15px;
-            }
-
-            .btn {
-                width: 80%;
-                max-width: 250px;
-            }
-
-            .room-card img {
-                height: 160px;
-            }
+            .header h1 { font-size: 30px; }
+            .header p { font-size: 15px; }
+            .btn { width: 80%; max-width: 250px; }
+            .room-card img { height: 160px; }
         }
 
         @media (max-width: 480px) {
-
-            .header h1 {
-                font-size: 24px;
-            }
-
-            .header p {
-                font-size: 14px;
-            }
-
-            .rooms {
-                gap: 20px;
-            }
+            .header h1 { font-size: 24px; }
+            .header p { font-size: 14px; }
         }
+
     </style>
 </head>
+
 <body>
 
+<!-- HEADER -->
 <div class="header">
     <h1>Off-Campus Room Finder</h1>
     <p>Find your perfect room quickly and easily</p>
@@ -164,6 +181,7 @@
     <a href="login.html" class="btn">Login</a>
 </div>
 
+<!-- ROOMS -->
 <div class="rooms">
 
     <div class="room-card">
@@ -196,17 +214,38 @@
         </div>
     </div>
 
-    <div class="room-card">
-        <img src="p4.jpg" alt="2-Bedroom Apartment">
-        <div class="content">
-            <h3>2-Bedroom Apartment</h3>
-            <p>Location: Suburb</p>
-            <p>Price: $200/month</p>
-            <a href="book.html" class="btn">Book Now</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>Off-Campus Room Finder</h3>
+            <p>Helping students find safe and affordable rooms near campus easily and quickly.</p>
         </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="book.html">Book Room</a>
+            <a href="index.html">Home</a>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Email: info@roomfinder.com</p>
+            <p>Phone: +255 712 345 678</p>
+            <p>Location: Tanzania</p>
+        </div>
+
     </div>
 
-</div>
+    <div class="footer-bottom">
+        © 2026 Off-Campus Room Finder | All Rights Reserved
+    </div>
+</footer>
 
 </body>
 </html>
