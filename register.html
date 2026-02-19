@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(to right, #74ebd5, #9face6);
@@ -13,26 +17,48 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            padding: 15px;
         }
 
         .container {
             background: white;
-            padding: 40px;
+            padding: 35px 30px;
             border-radius: 15px;
             width: 100%;
             max-width: 400px;
-            text-align: center;
+            text-align: left;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        h2 { color: #0072ff; }
+        h2 {
+            text-align: center;
+            color: #0072ff;
+            margin-bottom: 25px;
+        }
+
+        /* ✨ LABEL STYLE */
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+            margin-top: 15px;
+        }
 
         input {
             width: 100%;
             padding: 12px;
-            margin: 10px 0;
             border-radius: 8px;
             border: 1px solid #ccc;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #0072ff;
+            box-shadow: 0 0 5px rgba(0,114,255,0.3);
+            outline: none;
         }
 
         button {
@@ -43,11 +69,38 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
+            font-size: 15px;
+            margin-top: 20px;
+            transition: 0.3s;
         }
 
-        button:hover { background: #005bb5; }
+        button:hover {
+            background: #005bb5;
+        }
 
-        .link { margin-top: 15px; }
+        .link {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .link a {
+            color: #0072ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+
+        /* 📱 Mobile adjustment */
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px 20px;
+            }
+        }
+
     </style>
 </head>
 
@@ -57,9 +110,16 @@
     <h2>Register</h2>
 
     <form onsubmit="registerUser(event)">
-        <input type="text" id="name" placeholder="Full Name" required>
-        <input type="email" id="email" placeholder="Email Address" required>
-        <input type="password" id="password" placeholder="Password" required>
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email address" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password" required>
+
         <button type="submit">Register</button>
     </form>
 
@@ -77,6 +137,7 @@ function registerUser(event) {
     let password = document.getElementById("password").value;
 
     // Save user in localStorage
+    localStorage.setItem("userName", name);
     localStorage.setItem("userEmail", email);
     localStorage.setItem("userPassword", password);
 
